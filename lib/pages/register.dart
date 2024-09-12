@@ -1,4 +1,3 @@
-import 'package:dealsdray/components/my_button.dart';
 import 'package:dealsdray/pages/home.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +9,9 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController referralController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,80 +46,57 @@ class _RegisterState extends State<Register> {
                   height: 20,
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey,
-                      borderRadius: BorderRadius.circular(25),
+                  padding: const EdgeInsets.only(left: 20.0, right: 20),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Email',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15)),
                     ),
-                    child: const Padding(
-                      padding: EdgeInsets.only(left: 20),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: 'Your Email',
-                        ),
-                      ),
-                    ),
+                    controller: emailController,
                   ),
                 ),
                 const SizedBox(
                   height: 25,
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey,
-                      borderRadius: BorderRadius.circular(25),
+                  padding: const EdgeInsets.only(left: 20.0, right: 20),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Create Password',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15)),
                     ),
-                    child: const Padding(
-                      padding: EdgeInsets.only(left: 20),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: 'Create Password',
-                        ),
-                      ),
-                    ),
+                    controller: passwordController,
                   ),
                 ),
                 const SizedBox(
                   height: 25,
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey,
-                      borderRadius: BorderRadius.circular(25),
+                  padding: const EdgeInsets.only(left: 20.0, right: 20),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Referral Code (Optional)',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15)),
                     ),
-                    child: const Padding(
-                      padding: EdgeInsets.only(left: 20),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: 'Referral Code (Optional)',
-                        ),
-                      ),
-                    ),
+                    controller: referralController,
                   ),
                 ),
                 const SizedBox(
                   height: 25,
                 ),
-                MyButton(
-                    onTap: () {
+                ElevatedButton(
+                    onPressed: () async {
                       Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const Home(),
-                        ),
-                      );
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Home()));
                     },
                     child: const Icon(
                       Icons.arrow_forward,
-                      color: Colors.white,
+                      color: Colors.black,
                     ))
               ],
             ),

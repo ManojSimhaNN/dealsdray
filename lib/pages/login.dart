@@ -10,6 +10,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  TextEditingController phoneController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,21 +41,16 @@ class _LoginState extends State<Login> {
               height: 40,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey,
-                  borderRadius: BorderRadius.circular(25),
-                ),
-                child: const Padding(
-                  padding: EdgeInsets.only(left: 20),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Phone',
-                    ),
-                  ),
-                ),
+              padding: const EdgeInsets.only(
+                left: 20.0,
+                right: 20,
+              ),
+              child: TextField(
+                decoration: InputDecoration(
+                    hintText: 'Phone',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    )),
               ),
             ),
             const SizedBox(

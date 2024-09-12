@@ -1,6 +1,5 @@
 // ignore_for_file: camel_case_types
 
-import 'package:dealsdray/components/my_button.dart';
 import 'package:dealsdray/pages/login.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +18,6 @@ class _welcomeState extends State<welcome> {
         drawerEdgeDragWidth: MediaQuery.of(context).size.width,
         body:
             // BoxDecoration takes the image
-
             Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -39,19 +37,12 @@ class _welcomeState extends State<welcome> {
               const SizedBox(
                 height: 40,
               ),
-              MyButton(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const Login(),
-                      ),
-                    );
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => const Login()));
                   },
-                  child: const Icon(
-                    Icons.arrow_forward,
-                    color: Colors.white,
-                  ))
+                  child: Icon(Icons.arrow_forward)),
             ],
           ),
         ));
